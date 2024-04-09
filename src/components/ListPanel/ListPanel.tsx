@@ -5,9 +5,9 @@ import {Box, styled} from "@mui/material";
 import AppButton from "components/atoms/AppButton";
 import {useEffect} from "react";
 
-const ListPanelContainer = styled(Box)(() => ({
+const ListPanelContainer = styled(Box)(({theme}) => ({
   boxSizing: 'border-box',
-  width: '400px',
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -21,7 +21,7 @@ export const ListPanel = () => {
     if(weatherData.length < 1) {
       setCurrentWidget(undefined)
     }
-  }, [weatherData]);
+  }, [weatherData, setCurrentWidget]);
 
   const removeListItem = (e: React.MouseEvent<HTMLElement>) => {
     const filteredData = weatherData.filter((el: getWeather) => {

@@ -5,6 +5,7 @@ import {getWeather} from "types/commonTypes";
 const WeatherDetailContainer = styled(Box)(() => ({
   padding: '2rem 1.5rem',
   display: 'flex',
+  flexWrap: 'wrap',
   gap: '20px',
   marginTop: '30px',
 }));

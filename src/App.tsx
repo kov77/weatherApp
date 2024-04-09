@@ -4,17 +4,19 @@ import WeatherPage from './components/pages/WetherPage/WeatherPage';
 import {SearchBox} from './components/atoms/SerchBox/SearchBox';
 import {WeatherProvider} from './context/WeatherContext';
 import {ListPanel} from "components/ListPanel/ListPanel";
-import {Box} from "@mui/material";
+import {Box, styled, useMediaQuery} from "@mui/material";
 import {WeatherPanel} from "components/WeatherPanel/WeatherPanel";
-
+const ListPanelContainer = styled(Box)(({theme}) => ({
+  width: useMediaQuery(theme.breakpoints.up('md')) ? '30%' : '100%',
+}));
 function App() {
   return (
     <WeatherProvider>
       <WeatherPage>
-        <Box>
+        <ListPanelContainer>
           <SearchBox/>
           <ListPanel />
-        </Box>
+        </ListPanelContainer>
         <WeatherPanel />
       </WeatherPage>
     </WeatherProvider>

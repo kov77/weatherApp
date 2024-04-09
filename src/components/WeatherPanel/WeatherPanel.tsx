@@ -1,14 +1,14 @@
-import {Card, styled, Typography} from "@mui/material"
+import {Card, styled, Typography, useMediaQuery} from "@mui/material"
 import {useWeatherContext} from "context/WeatherContext";
 import dayjs from "dayjs";
 import {WeatherDetail} from "components/WeatherPanel/WeatherDetail/WeatherDetail";
 import {FiveDaysForecast} from "components/WeatherPanel/FiveDaysForecast/FiveDaysForecast";
 
-const WeatherPanelContainer = styled(Card)(() => ({
+const WeatherPanelContainer = styled(Card)(({theme}) => ({
   padding: '3rem',
   display: 'flex',
   flexDirection: 'column',
-  width: '100%',
+  width: useMediaQuery(theme.breakpoints.up('md')) ? '60%' : '100%',
   overflow: 'auto',
 }));
 export const WeatherPanel = () => {

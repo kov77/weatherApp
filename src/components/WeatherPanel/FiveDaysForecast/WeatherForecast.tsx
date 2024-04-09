@@ -1,11 +1,12 @@
-import {Card, styled, Typography} from "@mui/material";
+import {Card, styled, Typography, useMediaQuery} from "@mui/material";
 import AppImage from "components/atoms/AppImage";
-import {ForecastListEl, getForecastFiveDays} from "types/commonTypes";
+import {ForecastListEl} from "types/commonTypes";
 import dayjs from "dayjs";
 
-const ForecastCardContainer = styled(Card)(() => ({
+const ForecastCardContainer = styled(Card)(({theme}) => ({
   padding: '1.5rem 1rem',
   display: 'flex',
+  width: useMediaQuery(theme.breakpoints.up('md')) ? 'fit-content' : '100%',
   flexDirection: 'column',
   alignItems: 'center',
 }));
